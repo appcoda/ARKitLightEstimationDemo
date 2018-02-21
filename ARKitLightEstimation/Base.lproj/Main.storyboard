@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARKitLightDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2O-KT-3zV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuD-g0-WlP">
+                                <rect key="frame" x="16" y="303.5" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="9YT-pV-WVc"/>
+                                </constraints>
+                                <string key="text">Move device around 
+to detect a horizontal surface</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-r8-foQ">
+                                <rect key="frame" x="16" y="515" width="343" height="136"/>
+                                <subviews>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yyr-eJ-dwY">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Estimation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fn7-5k-7GO">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-VP-U8S">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="0.0"/>
+                                                <connections>
+                                                    <action selector="lightEstimationSwitchValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="kCO-7b-57c"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wi3-Aa-1Fo">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ambient Intensity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMu-YH-VIq">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="xVR-QA-B19">
+                                                <rect key="frame" x="-2" y="30" width="347" height="31"/>
+                                                <connections>
+                                                    <action selector="ambientIntensitySliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="bau-G4-MRf"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-W9-at6">
+                                        <rect key="frame" x="0.0" y="76" width="343" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ambient Color Temperature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIt-Mx-aGL">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="6fY-cr-geJ">
+                                                <rect key="frame" x="-2" y="30" width="347" height="31"/>
+                                                <connections>
+                                                    <action selector="ambientColorTemperatureSliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="5xs-5x-BbG"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lcQ-r8-foQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="38G-6T-5Gz"/>
+                            <constraint firstAttribute="trailing" secondItem="E2O-KT-3zV" secondAttribute="trailing" id="HFe-EZ-GDb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lcQ-r8-foQ" secondAttribute="bottom" constant="16" id="JHt-47-Bcz"/>
+                            <constraint firstItem="AuD-g0-WlP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MVs-Pv-vk1"/>
+                            <constraint firstItem="E2O-KT-3zV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RMH-BW-L94"/>
+                            <constraint firstItem="AuD-g0-WlP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="Tke-rB-ITs"/>
+                            <constraint firstAttribute="bottom" secondItem="E2O-KT-3zV" secondAttribute="bottom" id="Vrq-lS-pj3"/>
+                            <constraint firstItem="E2O-KT-3zV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XWB-jL-HwL"/>
+                            <constraint firstAttribute="trailing" secondItem="lcQ-r8-foQ" secondAttribute="trailing" constant="16" id="oeG-jo-wv1"/>
+                            <constraint firstItem="AuD-g0-WlP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zC6-6u-grR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ambientColorTemperatureLabel" destination="eIt-Mx-aGL" id="SQh-Tq-vJr"/>
+                        <outlet property="ambientColorTemperatureSlider" destination="6fY-cr-geJ" id="8ib-89-PNh"/>
+                        <outlet property="ambientIntensityLabel" destination="YMu-YH-VIq" id="ilp-Ap-NQu"/>
+                        <outlet property="ambientIntensitySlider" destination="xVR-QA-B19" id="FNm-rC-6fE"/>
+                        <outlet property="instructionLabel" destination="AuD-g0-WlP" id="dOY-ID-a7v"/>
+                        <outlet property="lightEstimationStackView" destination="yyr-eJ-dwY" id="Vpn-39-VKm"/>
+                        <outlet property="lightEstimationSwitch" destination="C8L-VP-U8S" id="SxS-NO-azH"/>
+                        <outlet property="mainStackView" destination="lcQ-r8-foQ" id="HSG-qf-uel"/>
+                        <outlet property="sceneView" destination="E2O-KT-3zV" id="4xW-qa-HAi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
